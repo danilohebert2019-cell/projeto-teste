@@ -178,6 +178,264 @@
         /* ONLINE INDICATORS */
         .online-badge { display:inline-flex; align-items:center; gap:4px; background:rgba(0,229,160,0.1); border:1px solid rgba(0,229,160,0.3); color:var(--pm); border-radius:4px; padding:2px 8px; font-size:10px; font-weight:700; text-transform:uppercase; }
         .online-dot { width:6px; height:6px; border-radius:50%; background:var(--pm); animation:pulse-dot 1.5s infinite; }
+
+        /* MODERNIZACAO VISUAL - PALETA VERDE, BRANCO, PRETO E CINZA */
+        :root {
+            --green: #22c55e;
+            --green-soft: rgba(34,197,94,.12);
+            --green-line: rgba(34,197,94,.38);
+            --danger: #ef4444;
+            --danger-soft: rgba(239,68,68,.12);
+            --surface: rgba(14,18,16,.86);
+            --surface-2: rgba(24,28,26,.92);
+            --line: rgba(255,255,255,.12);
+        }
+        body {
+            background:
+                radial-gradient(circle at 18% 0%, rgba(34,197,94,.15), transparent 28%),
+                radial-gradient(circle at 88% 12%, rgba(255,255,255,.08), transparent 25%),
+                linear-gradient(135deg, #030504 0%, #0a0f0c 48%, #050505 100%) !important;
+            color: #f8fafc;
+        }
+        body::before {
+            background-image:
+                linear-gradient(rgba(34,197,94,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px) !important;
+            background-size: 42px 42px !important;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,.95), rgba(0,0,0,.55));
+        }
+        #app { padding: 24px clamp(14px, 2vw, 32px); }
+        .topbar, .panel, .panel2, .login-box, .menu-card, .stat-card, .rank-panel {
+            background: linear-gradient(180deg, rgba(18,24,21,.94), rgba(7,9,8,.94)) !important;
+            border: 1px solid var(--line) !important;
+            box-shadow: 0 18px 50px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.04);
+            backdrop-filter: blur(14px);
+        }
+        .panel, .login-box { border-radius: 14px !important; }
+        .panel2, .stat-card, .menu-card, .rank-panel { border-radius: 12px !important; }
+        .topbar {
+            min-height: 48px;
+            border-color: rgba(34,197,94,.2) !important;
+            box-shadow: 0 18px 50px rgba(0,0,0,.28);
+        }
+        .screen-header {
+            padding: 22px 0;
+            border-bottom-color: rgba(34,197,94,.22) !important;
+        }
+        .screen-title {
+            font-size: clamp(26px, 3vw, 42px);
+            letter-spacing: 0;
+        }
+        .screen-title span, .section-title.pm, .section-title.bope, .section-title.cot, .section-title.adv,
+        .tab-item.active, .topbar-live, .stat-val, .rank-time {
+            color: var(--green) !important;
+            text-shadow: 0 0 20px rgba(34,197,94,.16);
+        }
+        .section-title::before, .live-dot, .online-dot, .legenda-dot {
+            background: var(--green) !important;
+            box-shadow: 0 0 16px rgba(34,197,94,.38);
+        }
+        .tabs {
+            gap: 8px;
+            border-bottom: 0;
+            background: rgba(255,255,255,.035);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 6px;
+            overflow-x: auto;
+        }
+        .tab-item {
+            border: 0 !important;
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #a1a1aa;
+            white-space: nowrap;
+        }
+        .tab-item:hover { background: rgba(255,255,255,.06); color: #fff; }
+        .tab-item.active {
+            background: linear-gradient(180deg, rgba(34,197,94,.2), rgba(34,197,94,.08));
+            box-shadow: inset 0 0 0 1px rgba(34,197,94,.3);
+        }
+        .inp, select, input[type="date"], input[type="time"], input[type="number"], input[type="text"], input[type="password"] {
+            background: rgba(3,5,4,.76) !important;
+            border-color: rgba(255,255,255,.13) !important;
+            color: #fff !important;
+            border-radius: 9px !important;
+        }
+        .inp:focus, select:focus, input:focus {
+            border-color: var(--green) !important;
+            box-shadow: 0 0 0 3px rgba(34,197,94,.12) !important;
+            outline: none !important;
+        }
+        .btn, button.btn, .cover-controls button {
+            border-radius: 9px !important;
+        }
+        .btn-pm, .btn-civil, .btn-bope, .btn-cot, .btn-adv, .btn:not(.btn-ghost):not(.btn-danger) {
+            background: linear-gradient(180deg, rgba(34,197,94,.22), rgba(34,197,94,.1)) !important;
+            border-color: rgba(34,197,94,.48) !important;
+            color: #f8fafc !important;
+        }
+        .btn-pm:hover, .btn-civil:hover, .btn-bope:hover, .btn-cot:hover, .btn-adv:hover {
+            background: var(--green) !important;
+            color: #020403 !important;
+            transform: translateY(-1px);
+        }
+        .btn-ghost {
+            border-color: rgba(255,255,255,.16) !important;
+            background: rgba(255,255,255,.035) !important;
+            color: #d4d4d8 !important;
+        }
+        .tbl th {
+            background: rgba(255,255,255,.035);
+            color: #cbd5e1;
+        }
+        .tbl td { border-bottom-color: rgba(255,255,255,.055); }
+        .tbl tr:hover td { background: rgba(34,197,94,.045) !important; }
+        .menu-grid { gap: 18px !important; }
+        .menu-card {
+            min-height: 188px;
+            border-color: rgba(34,197,94,.18) !important;
+        }
+        .menu-card::before {
+            height: 3px !important;
+            background: linear-gradient(90deg, transparent, var(--green), transparent) !important;
+        }
+        .menu-card:hover {
+            border-color: rgba(34,197,94,.5) !important;
+            box-shadow: 0 24px 70px rgba(0,0,0,.46), 0 0 0 1px rgba(34,197,94,.18) !important;
+        }
+        .menu-icon {
+            background: rgba(34,197,94,.1) !important;
+            border: 1px solid rgba(34,197,94,.26);
+        }
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            inset: auto 16px 0 16px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(34,197,94,.65), transparent);
+        }
+        .rank-item, .service-log-item, .cargo-row {
+            background: rgba(255,255,255,.04) !important;
+            border: 1px solid rgba(255,255,255,.09) !important;
+            border-radius: 10px !important;
+        }
+        .rank-item:hover, .service-log-item:hover, .cargo-row:hover {
+            border-color: rgba(34,197,94,.28) !important;
+            background: rgba(34,197,94,.055) !important;
+        }
+        .rank-1, .rank-2, .rank-3 {
+            background: linear-gradient(180deg, rgba(34,197,94,.16), rgba(255,255,255,.035)) !important;
+            border-color: rgba(34,197,94,.32) !important;
+        }
+        .rank-pos { color: #f8fafc !important; }
+        .rank-name small, .rank-id { color: #a1a1aa; font-family: 'Share Tech Mono', monospace; }
+        .service-hours-board {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255,255,255,.1);
+        }
+        .service-hours-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .service-hours-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--green);
+        }
+        .service-hours-sub {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            color: var(--muted);
+        }
+        .service-hours-list {
+            display: grid;
+            gap: 6px;
+            max-height: 330px;
+            overflow: auto;
+            padding-right: 2px;
+        }
+        .service-person-row {
+            display: grid;
+            grid-template-columns: 34px minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 10px;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 10px;
+            background: rgba(255,255,255,.035);
+        }
+        .service-person-name {
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .service-person-row.low-hours .service-person-name,
+        .service-person-row.low-hours .service-person-time {
+            color: var(--danger) !important;
+        }
+        .service-person-row.low-hours {
+            border-color: rgba(239,68,68,.38);
+            background: var(--danger-soft);
+        }
+        .service-person-id {
+            display: block;
+            margin-top: 2px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            color: var(--muted);
+        }
+        .service-person-time {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 12px;
+            color: var(--green);
+            white-space: nowrap;
+        }
+        @media (max-width: 900px) {
+            .sidebar-main, .menu-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .screen-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 14px;
+            }
+            .stat-card { padding: 16px; }
+            .service-person-row { grid-template-columns: 30px minmax(0, 1fr); }
+            .service-person-time { grid-column: 2; }
+        }
+
+        /* Ajuste pedido: todos os cards dos paineis com borda verde */
+        .menu-card,
+        .menu-card.pm-card,
+        .menu-card.civil-card,
+        .menu-card.bope-card,
+        .menu-card.cot-card {
+            border-color: rgba(34,197,94,.45) !important;
+            box-shadow: 0 18px 48px rgba(0,0,0,.24), inset 0 0 0 1px rgba(34,197,94,.12) !important;
+        }
+        .menu-card:hover,
+        .menu-card.pm-card:hover,
+        .menu-card.civil-card:hover,
+        .menu-card.bope-card:hover,
+        .menu-card.cot-card:hover {
+            border-color: rgba(34,197,94,.85) !important;
+            box-shadow: 0 28px 70px rgba(0,0,0,.34), 0 0 0 1px rgba(34,197,94,.28) !important;
+        }
         /* ARTIGO BADGE */
         .artigo-badge-grave { background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.4); color:#f87171; border-radius:4px; padding:1px 6px; font-size:9px; font-weight:700; text-transform:uppercase; }
         .artigo-badge-media { background:rgba(245,197,24,0.12); border:1px solid rgba(245,197,24,0.35); color:#fbbf24; border-radius:4px; padding:1px 6px; font-size:9px; font-weight:700; text-transform:uppercase; }
@@ -1655,6 +1913,7 @@
                 <div style="display:flex;flex-direction:column;gap:12px;">
                     <div><label style="display:block;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;">Usuário</label><input type="text" id="newLoginUser" class="inp" style="border-color:rgba(255,50,50,0.3);" placeholder="nome do usuário"></div>
                     <div><label style="display:block;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;">Senha</label><input type="password" id="newLoginPass" class="inp" style="border-color:rgba(255,50,50,0.3);" placeholder="senha"></div>
+                    <div><label style="display:block;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;">Limite de acessos</label><input type="number" id="newLoginLimit" class="inp" min="0" style="border-color:rgba(255,50,50,0.3);" placeholder="0 = sem limite"></div>
                     <div><label style="display:block;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;">Permissões (painéis)</label>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;" id="permissoesCheck">
                         <label style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;text-transform:uppercase;color:var(--pm);cursor:pointer;"><input type="checkbox" value="pm" class="chk-pm" checked> PM</label>
@@ -1709,6 +1968,58 @@ const ADMIN_PASS = 'admin123';
  
 let usuariosExtra = JSON.parse(localStorage.getItem('usuarios_sistema_v1')) || [];
 let usuarioAtual = null;
+
+const LOGIN_SESSIONS_KEY = 'login_sessoes_limitadas_v1';
+
+function idSessaoAtual() {
+    let id = sessionStorage.getItem('login_session_id');
+    if(!id) {
+        id = Date.now() + '_' + Math.random().toString(36).slice(2);
+        sessionStorage.setItem('login_session_id', id);
+    }
+    return id;
+}
+
+function carregarSessoesLogin() {
+    try { return JSON.parse(localStorage.getItem(LOGIN_SESSIONS_KEY)) || []; }
+    catch(e) { return []; }
+}
+
+function salvarSessoesLogin(lista) {
+    localStorage.setItem(LOGIN_SESSIONS_KEY, JSON.stringify(lista));
+}
+
+function limparSessoesLogin() {
+    const limiteTempo = Date.now() - (12 * 60 * 60 * 1000);
+    const lista = carregarSessoesLogin().filter(s => s.ts && s.ts > limiteTempo);
+    salvarSessoesLogin(lista);
+    return lista;
+}
+
+function podeEntrarComLogin(usr) {
+    const limite = parseInt(usr.limiteAcessos) || 0;
+    if(limite <= 0) return true;
+    const sid = idSessaoAtual();
+    const ativos = limparSessoesLogin().filter(s => s.usuario === usr.usuario);
+    if(ativos.some(s => s.sid === sid)) return true;
+    return ativos.length < limite;
+}
+
+function registrarSessaoLogin(usuario) {
+    const usr = usuariosExtra.find(x => x.usuario === usuario);
+    if(!usr || !(parseInt(usr.limiteAcessos) > 0)) return;
+    const sid = idSessaoAtual();
+    const lista = limparSessoesLogin().filter(s => !(s.usuario === usuario && s.sid === sid));
+    lista.push({ usuario, sid, ts: Date.now() });
+    salvarSessoesLogin(lista);
+}
+
+function liberarSessaoLogin(usuario) {
+    if(!usuario) return;
+    const sid = sessionStorage.getItem('login_session_id');
+    if(!sid) return;
+    salvarSessoesLogin(carregarSessoesLogin().filter(s => !(s.usuario === usuario && s.sid === sid)));
+}
  
 function fazerLogin() {
     const u = document.getElementById('loginUser').value.trim();
@@ -1723,7 +2034,11 @@ function fazerLogin() {
     // Extra
     const usr = usuariosExtra.find(x => x.usuario === u && x.senha === p);
     if (usr) {
-        usuarioAtual = { nome: u.toUpperCase(), permissoes: usr.permissoes || [], isAdmin: usr.permissoes && usr.permissoes.includes('admin') };
+        if(!podeEntrarComLogin(usr)) {
+            alert('Limite de acessos atingido para este login.');
+            return;
+        }
+        usuarioAtual = { nome: u.toUpperCase(), loginUsuario: u, permissoes: usr.permissoes || [], isAdmin: usr.permissoes && usr.permissoes.includes('admin') };
         abrirSistema(u);
         return;
     }
@@ -1741,6 +2056,7 @@ function abrirSistema(u) {
         localStorage.removeItem('panel_img_' + p);
         localStorage.removeItem('banner_state_' + p);
     });
+    registrarSessaoLogin(u);
     localStorage.setItem('sessao_atual', JSON.stringify(usuarioAtual));
     document.getElementById('loginScreen').classList.add('hidden');
     document.getElementById('app').classList.remove('hidden');
@@ -1765,6 +2081,7 @@ function aplicarPermissoes() {
 }
  
 function fazerLogout() {
+    liberarSessaoLogin(usuarioAtual && usuarioAtual.loginUsuario);
     usuarioAtual = null;
     localStorage.removeItem('sessao_atual');
     document.getElementById('loginScreen').classList.remove('hidden');
@@ -2588,14 +2905,16 @@ function atualizarAdmin(){
 function salvarNovoLogin(){
     const u=document.getElementById('newLoginUser').value.trim();
     const p=document.getElementById('newLoginPass').value;
+    const limiteAcessos=parseInt(document.getElementById('newLoginLimit')?.value)||0;
     if(!u||!p){alert('Preencha usuário e senha.');return;}
     if(u===ADMIN_USER){alert('Não é possível editar o admin padrão aqui.');return;}
     const perms=[...document.querySelectorAll('#permissoesCheck input:checked')].map(x=>x.value);
     const idx=usuariosExtra.findIndex(x=>x.usuario===u);
-    if(idx>-1)usuariosExtra[idx]={usuario:u,senha:p,permissoes:perms};
-    else usuariosExtra.push({usuario:u,senha:p,permissoes:perms});
+    if(idx>-1)usuariosExtra[idx]={usuario:u,senha:p,permissoes:perms,limiteAcessos};
+    else usuariosExtra.push({usuario:u,senha:p,permissoes:perms,limiteAcessos});
     localStorage.setItem('usuarios_sistema_v1',JSON.stringify(usuariosExtra));
     document.getElementById('newLoginUser').value='';document.getElementById('newLoginPass').value='';
+    const limiteEl=document.getElementById('newLoginLimit'); if(limiteEl) limiteEl.value='';
     renderizarListaLogins();
     alert('Login salvo com sucesso!');
 }
@@ -2609,13 +2928,75 @@ function renderizarListaLogins(){
     if(!usuariosExtra.length){el.innerHTML+=`<div style="text-align:center;padding:24px;color:var(--muted);font-size:12px;">Nenhum usuário extra cadastrado</div>`;return;}
     usuariosExtra.forEach(u=>{
         const permsStr=u.permissoes.join(', ').toUpperCase()||'Nenhuma';
+        const limiteStr=(parseInt(u.limiteAcessos)||0)>0?` | LIMITE: ${u.limiteAcessos}`:' | SEM LIMITE';
         el.innerHTML+=`<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:6px;margin-bottom:6px;"><div><div style="font-size:13px;font-weight:700;color:white;">${u.usuario}</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;">${permsStr}</div></div><button onclick="deletarLogin('${u.usuario}')" class="btn-danger">✕</button></div>`;
     });
 }
  
 // ==========================================
+// CADASTRO - ATUALIZAR PELO PASSAPORTE
+// ==========================================
+function valorCampoCadastro(id) {
+    return document.getElementById(id)?.value || '';
+}
+
+function instalarAtualizacaoPorPassaporte(cfg) {
+    const form = document.getElementById(cfg.formId);
+    if(!form) return;
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        const eid = valorCampoCadastro(cfg.editId);
+        const dados = cfg.dados(eid);
+        const lista = cfg.lista();
+        const passaporte = (dados.idCidade || '').toString().trim();
+        const idx = eid
+            ? lista.findIndex(m => m.uid === parseInt(eid))
+            : lista.findIndex(m => (m.idCidade || '').toString().trim() === passaporte);
+
+        if(idx > -1) {
+            const atual = lista[idx];
+            dados.uid = atual.uid;
+            ['alinhado','dataAlinhado','falhouAlinhamento','exonerado'].forEach(k => {
+                if(atual[k] !== undefined) dados[k] = atual[k];
+            });
+            lista[idx] = dados;
+        } else {
+            lista.push(dados);
+        }
+
+        cfg.reset();
+        cfg.salvar();
+    }, true);
+}
+
+function iniciarAtualizacaoPorPassaporte() {
+    instalarAtualizacaoPorPassaporte({
+        formId:'pmForm', editId:'editUid', lista:()=>membros, reset:resetFormPM, salvar:salvarPM,
+        dados:eid=>({uid:eid?parseInt(eid):Date.now(),nome:valorCampoCadastro('nome'),idCidade:valorCampoCadastro('idCidade'),ficha:valorCampoCadastro('ficha'),patente:valorCampoCadastro('patente'),map:document.getElementById('map').checked,dataAviso:valorCampoCadastro('dataAviso'),dataIngresso:valorCampoCadastro('dataIngresso'),dataLogin:valorCampoCadastro('dataLogin'),alinhado:false,dataAlinhado:null,falhouAlinhamento:false})
+    });
+    instalarAtualizacaoPorPassaporte({
+        formId:'civilForm', editId:'editUidCivil', lista:()=>membrosCivil, reset:resetFormCivil, salvar:salvarCivil,
+        dados:eid=>({uid:eid?parseInt(eid):Date.now(),nome:valorCampoCadastro('nomeCivil'),idCidade:valorCampoCadastro('idCidadeCivil'),ficha:valorCampoCadastro('fichaCivil'),patente:valorCampoCadastro('patenteCivil'),map:document.getElementById('mapCivil').checked,dataAviso:valorCampoCadastro('dataAvisoCivil'),dataIngresso:valorCampoCadastro('dataIngressoCivil'),dataLogin:valorCampoCadastro('dataLoginCivil'),alinhado:false,dataAlinhado:null,falhouAlinhamento:false})
+    });
+    [
+        ['bopeForm','editUidBope',()=>membrosBope,resetFormBope,salvarBope,'nomeBope','idCidadeBope','patenteBope','statusOpBope','dataIngressoBope','dataLoginBope'],
+        ['cotForm','editUidCot',()=>membrosCot,resetFormCot,salvarCot,'nomeCot','idCidadeCot','patenteCot','statusOpCot','dataIngressoCot','dataLoginCot'],
+        ['gtmForm','editUidGtm',()=>membrosGtm,resetFormGtm,salvarGtm,'nomeGtm','idCidadeGtm','patenteGtm','statusGtm','dataIngressoGtm','dataLoginGtm'],
+        ['gateForm','editUidGate',()=>membrosGate,resetFormGate,salvarGate,'nomeGate','idCidadeGate','patenteGate','statusGate','dataIngressoGate','dataLoginGate'],
+        ['grrForm','editUidGrr',()=>membrosGrr,resetFormGrr,salvarGrr,'nomeGrr','idCidadeGrr','patenteGrr','statusGrr','dataIngressoGrr','dataLoginGrr']
+    ].forEach(([formId,editId,lista,reset,salvar,nome,idCidade,patente,status,dataIngresso,dataLogin]) => {
+        instalarAtualizacaoPorPassaporte({
+            formId, editId, lista, reset, salvar,
+            dados:eid=>({uid:eid?parseInt(eid):Date.now(),nome:valorCampoCadastro(nome),idCidade:valorCampoCadastro(idCidade),patente:valorCampoCadastro(patente),statusOp:valorCampoCadastro(status),dataIngresso:valorCampoCadastro(dataIngresso),dataLogin:valorCampoCadastro(dataLogin)})
+        });
+    });
+}
+
+// ==========================================
 // INIT
 // ==========================================
+iniciarAtualizacaoPorPassaporte();
 atualizarSelectPatentes();
 atualizarSelectPatentesBope();
 atualizarSelectPatentesCot();
@@ -3314,6 +3695,168 @@ renderizarServico = function(painel) {
 };
 
 // ==========================================
+// SERVICO - RANKING COM ID E QUADRO MENSAL
+// ==========================================
+const SERVICE_MONTHLY_MINUTES_TARGET = 35 * 60;
+
+function serviceEscapeHTML(valor) {
+    return String(valor ?? '').replace(/[&<>"']/g, ch => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    }[ch]));
+}
+
+function servicePersonKey(s) {
+    const passaporte = (s.passaporte || '').toString().trim();
+    if(passaporte) return 'pass:' + passaporte;
+    return 'nome:' + (s.nome || '').toString().trim().toLowerCase();
+}
+
+function serviceDateInRange(s, de, ate) {
+    if(!s || !s.data) return false;
+    const d = new Date(s.data + 'T12:00:00');
+    return d >= de && d <= ate;
+}
+
+function serviceBuildPeople(painel, de, ate) {
+    const mapa = {};
+    (servicosData[painel] || []).forEach(s => {
+        if(!serviceDateInRange(s, de, ate)) return;
+        const key = servicePersonKey(s);
+        if(!mapa[key]) {
+            mapa[key] = {
+                nome: s.nome || 'Sem nome',
+                passaporte: (s.passaporte || '').toString().trim(),
+                mins: 0,
+                ultimoTs: 0
+            };
+        }
+        mapa[key].nome = s.nome || mapa[key].nome;
+        if(s.passaporte) mapa[key].passaporte = s.passaporte.toString().trim();
+        mapa[key].mins += (parseInt(s.horas) || 0) * 60 + (parseInt(s.mins) || 0);
+        mapa[key].ultimoTs = Math.max(mapa[key].ultimoTs, parseInt(s.ts) || 0);
+    });
+    return Object.values(mapa).sort((a,b) => b.mins - a.mins || a.nome.localeCompare(b.nome));
+}
+
+function servicePersonHTML(item, pos, opts = {}) {
+    const id = item.passaporte ? `#${serviceEscapeHTML(item.passaporte)}` : '#SEM ID';
+    const baixo = item.mins < SERVICE_MONTHLY_MINUTES_TARGET;
+    const rowClass = opts.monthly && baixo ? ' low-hours' : '';
+    const medal = pos === 1 ? '1' : pos === 2 ? '2' : pos === 3 ? '3' : pos;
+    return `<div class="service-person-row${rowClass}">
+        <span class="rank-pos">${medal}</span>
+        <span style="min-width:0;">
+            <span class="service-person-name">${serviceEscapeHTML(item.nome)}</span>
+            <span class="service-person-id">${id}</span>
+        </span>
+        <span class="service-person-time">${formatMins(item.mins)}</span>
+    </div>`;
+}
+
+function ensureServiceHoursBoard(painel) {
+    const aba = document.getElementById('aba-servico-' + painel.toLowerCase());
+    if(!aba) return null;
+    let board = document.getElementById('serviceHoursBoard' + painel);
+    if(board) return board;
+
+    const main = aba.querySelector('main') || aba;
+    const panel = document.createElement('div');
+    panel.className = 'panel';
+    panel.style.padding = '16px';
+    panel.innerHTML = `
+        <div class="service-hours-head">
+            <div>
+                <div class="service-hours-title">Horas de todos registrados</div>
+                <div class="service-hours-sub">Meta mensal: 35h</div>
+            </div>
+            <div class="service-hours-sub" id="serviceHoursCount${painel}"></div>
+        </div>
+        <div id="serviceHoursBoard${painel}" class="service-hours-list"></div>
+    `;
+    main.appendChild(panel);
+    return document.getElementById('serviceHoursBoard' + painel);
+}
+
+function renderServiceHoursBoard(painel, rankMes) {
+    const board = ensureServiceHoursBoard(painel);
+    if(!board) return;
+    const countEl = document.getElementById('serviceHoursCount' + painel);
+    if(countEl) countEl.textContent = `${rankMes.length} registrado${rankMes.length === 1 ? '' : 's'}`;
+    if(!rankMes.length) {
+        board.innerHTML = '<div style="text-align:center;padding:14px;color:var(--muted);font-size:12px;">Sem registros no mes atual</div>';
+        return;
+    }
+    board.innerHTML = rankMes.map((item, i) => servicePersonHTML(item, i + 1, { monthly: true })).join('');
+}
+
+function renderRankingBlock(el, lista, emptyText, limit, monthly) {
+    if(!el) return;
+    if(!lista.length) {
+        el.innerHTML = `<div style="text-align:center;padding:10px;color:var(--muted);font-size:11px;">${emptyText}</div>`;
+        return;
+    }
+    el.innerHTML = lista.slice(0, limit).map((item, i) => {
+        const id = item.passaporte ? `<small class="rank-id">#${serviceEscapeHTML(item.passaporte)}</small>` : '<small class="rank-id">#SEM ID</small>';
+        const cls = i === 0 ? ' rank-1' : i === 1 ? ' rank-2' : i === 2 ? ' rank-3' : '';
+        return `<div class="rank-item${cls}" style="margin-bottom:6px;">
+            <span class="rank-pos">${i + 1}</span>
+            <span class="rank-name">${serviceEscapeHTML(item.nome)} ${id}</span>
+            <span class="rank-time">${formatMins(item.mins)}</span>
+        </div>`;
+    }).join('');
+}
+
+renderizarRanking = function(painel) {
+    const offset = rankOffset[painel] || 0;
+    const { de, ate } = getSemanaDates(offset);
+    const { de: deM, ate: ateM } = getMesDates();
+    const rankSem = serviceBuildPeople(painel, de, ate);
+    const rankMes = serviceBuildPeople(painel, deM, ateM);
+
+    const labelEl = document.getElementById('semanaLabel' + painel);
+    if(labelEl) {
+        const opts = {day:'2-digit', month:'2-digit'};
+        labelEl.textContent = (offset === 0 ? 'Semana Atual: ' : offset + 'sem atras: ') + de.toLocaleDateString('pt-BR', opts) + ' - ' + ate.toLocaleDateString('pt-BR', opts);
+    }
+
+    renderRankingBlock(document.getElementById('rankSemanal' + painel), rankSem, 'Sem registros esta semana', 5, false);
+    renderRankingBlock(document.getElementById('rankingServico' + painel), rankSem, 'Sem registros esta semana', 8, false);
+    renderRankingBlock(document.getElementById('rankMensal' + painel), rankMes, 'Sem registros no mes atual', 5, true);
+    renderServiceHoursBoard(painel, rankMes);
+
+    const grafEl = document.getElementById('grafRank' + painel);
+    if(grafEl && rankMes.length > 0 && window.Chart) {
+        const ctx = grafEl.getContext('2d');
+        if(window['chartRank_' + painel]) window['chartRank_' + painel].destroy();
+        window['chartRank_' + painel] = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: rankMes.slice(0, 5).map(x => (x.nome || '').split(' ')[0]),
+                datasets: [{
+                    data: rankMes.slice(0, 5).map(x => parseFloat((x.mins / 60).toFixed(1))),
+                    backgroundColor: rankMes.slice(0, 5).map(x => x.mins < SERVICE_MONTHLY_MINUTES_TARGET ? 'rgba(239,68,68,.42)' : 'rgba(34,197,94,.55)'),
+                    borderColor: rankMes.slice(0, 5).map(x => x.mins < SERVICE_MONTHLY_MINUTES_TARGET ? '#ef4444' : '#22c55e'),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { display: false, beginAtZero: true },
+                    x: { ticks: { color: '#9ca3af', font: { size: 9 } }, grid: { display: false } }
+                }
+            }
+        });
+    }
+};
+
+// ==========================================
 // INIT extras
 // ==========================================
 setTimeout(()=>{
@@ -3391,7 +3934,3 @@ setTimeout(()=>{
 
 </body>
 </html>
-
-
-
-
